@@ -40,15 +40,24 @@
     <script>
       let num;
       function setNum(value) {
-        num = value;
+        console.log(typeof value);
+        num = parseInt(value);
+        // console.log(typeof num);
       }
 
       function check() {
-        if (num % 2 === 0) {
-          document.getElementById("i1").innerHTML =
-            "The entered number is even";
+        if (isNaN(num)) {
+          alert("enter only a number");
+          return;
         } else {
-          document.getElementById("i1").innerHTML = "The entered number is odd";
+          let n = parseInt(num);
+          if (n % 2 === 0) {
+            document.getElementById("i1").innerHTML =
+              "The entered number is even";
+          } else {
+            document.getElementById("i1").innerHTML =
+              "The entered number is odd";
+          }
         }
       }
     </script>
