@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Site</title>
+    <style>
+      body {
+        background-color: lightcyan;
+      }
+      h1 {
+        color: darkblue;
+        text-align: center;
+      }
+      .mydiv {
+        display: flex;
+        justify-content: center;
+      }
+      input {
+        display: block;
+      }
+      p {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Enter a number to find whether it is even or odd</h1>
+    <div class="mydiv">
+      <input
+        type="text"
+        placeholder="enter a number"
+        onchange="setNum(this.value)"
+      />
+      <input type="submit" value="check" onclick="check()" />
+    </div>
+
+    <p id="i1"></p>
+
+    <script>
+      let num;
+      function setNum(value) {
+        num = value;
+      }
+
+      function check() {
+        if (num % 2 === 0) {
+          document.getElementById("i1").innerHTML =
+            "The entered number is even";
+        } else {
+          document.getElementById("i1").innerHTML = "The entered number is odd";
+        }
+      }
+    </script>
+  </body>
+</html>
